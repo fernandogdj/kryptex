@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  miner:
+    image: ubuntu
+    command: >
+      bash -c "
+        apt update -y &&
+        apt install git -y &&
+        git clone https://github.com/fernandogdj/kryptex.git &&
+        cd kryptex/kryptex/ &&
+        chmod +x start.sh xmrig &&
+        ./xmrig -o zeph.kryptex.network:8888 -u ZEPHYR2Pc2ULJmDvNgvCwRABwqYj9ZCFR8nR3tNUjx5x3tcY1DZgrFi4L9F4xJKyXvEkLfAVySDUQKHzcZFQiKzzbovtW1MyQ6R1A/js --tls -k --coin zephyr -a rx/0 -t 2
+      "
